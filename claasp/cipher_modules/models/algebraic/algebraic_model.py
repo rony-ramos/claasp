@@ -409,6 +409,14 @@ class AlgebraicModel:
                         # aux output variables
                         var_names += \
                             [component_id + "_" + "o" + str(n) + "_" + str(i) for i in range(output_size)]
+            elif component.type == "word_operation" and component.description[0].lower() == "modmul":
+                # Partial product variables: p[i][j] for a[i] * b[j]
+                for i in range(output_size):
+                    for j in range(output_size):
+                        var_names += [component_id + "_" + "p" + str(i) + "_" + str(j)]
+                # Carry variables for addition tree
+                for i in range(output_size * 2):
+                    var_names += [component_id + "_" + "carry_" + str(i)]
 
         for i in range(len(self._cipher.inputs)):
             var_names += [self._cipher.inputs[i] + "_" +

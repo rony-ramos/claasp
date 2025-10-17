@@ -384,6 +384,66 @@ def bit_vector_MODSUB(input, number_of_inputs, output_bit_size, verbosity=False)
     return output
 
 
+def bit_vector_MODMUL(input, number_of_inputs, output_bit_size, modulus, verbosity=False):
+    """
+    Computes the modular multiplication of 2 binary inputs.
+    
+    Implements IDEA-style modular multiplication: (a * b) mod modulus
+    with the special rule that 0 is treated as 2^word_size.
+
+    INPUT:
+
+    - ``input`` -- **list**; A list of binary numpy matrices to be multiplied, each with one row per bit, and one column per sample.
+    - ``number_of_inputs`` -- **integer**; number of values to be multiplied (should be 2)
+    - ``output_bit_size`` -- **integer**; the bit size of the output
+    - ``modulus`` -- **integer**; the modulus for the multiplication operation (typically 2^16 + 1 for IDEA)
+    - ``verbosity`` -- **boolean**; (default: `False`); set this flag to True to print the input/output
+    """
+    assert number_of_inputs == 2  # Multiplication is binary operation
+    
+    # Concatenate inputs and split into two operands
+    inputConcatenated = bit_vector_CONCAT(input)
+    inputsList = [inputConcatenated[0:output_bit_size], 
+                  inputConcatenated[output_bit_size:2*output_bit_size]]
+    
+    # Convert bit vectors to integers for each sample (column)
+    val1 = bit_vector_to_integer(inputsList[0])
+    val2 = bit_vector_to_integer(inputsList[1])
+    
+    # Apply IDEA's special rule: 0 -> 2^word_size
+    word_size = output_bit_size
+    max_value = 2**word_size
+    a = np.where(val1 == 0, max_value, val1)
+    b = np.where(val2 == 0, max_value, val2)
+    
+    # Perform modular multiplication
+    result_int = (a * b) % modulus
+    
+    # Map result 2^word_size back to 0
+    final_result = np.where(result_int == max_value, 0, result_int).astype(np.uint64)
+    
+    # Convert integer result back to bit vector
+    output = np.zeros(shape=(output_bit_size, inputsList[0].shape[1]), dtype=np.uint8)
+    for i in range(output_bit_size):
+        bit_position = output_bit_size - 1 - i
+        output[bit_position] = (final_result >> i) & 1
+    
+    if DEBUG_MODE:
+        # Verify the computation
+        intInputs = [bit_vector_to_integer(inputConcatenated[i * output_bit_size:(i + 1) * output_bit_size])
+                     for i in range(2)]
+        a_check = np.where(intInputs[0] == 0, max_value, intInputs[0])
+        b_check = np.where(intInputs[1] == 0, max_value, intInputs[1])
+        X = (a_check * b_check) % modulus
+        X = np.where(X == max_value, 0, X)
+        assert np.all(X == bit_vector_to_integer(output))
+    
+    if verbosity:
+        print_component_info(input, output, "MODMUL:")
+    
+    return output
+
+
 def bit_vector_ROTATE(input, rotation_amount, verbosity=False):
     """
     Computes the rotation of binary values.
